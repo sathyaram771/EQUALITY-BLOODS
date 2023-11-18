@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <h1 style="color: white;">EQUALITY BLOODS</h1>
+    <a href="./home" style="color: white;font-size: 25px;position: absolute;top: 70px;left: 200px;">HOME</a>
+    <button id="btn" onclick="generatebill()">GENERATEBILL</button>
+        <div style="background-color: black;width: 400px;text-align: center;height: 250PX;border: 10px solid white;" id="div">
+            <h2 style="text-align: center;">EQUALITY BLOODS</h2>
+            <h3 style="text-align: left;">BILL NO:</h3>
+            <h3 id="billno" style="text-align: left;position: absolute;top: 160px;left: 110px;"></h3>
+            <h3 style="position: absolute;top: 160px;left: 265px;">DATE:</h3>
+            <h3 id="date" style="text-align: right;position: absolute;top:160px;left: 330px;"></h3>
+            <table style="border: 10PX solid black;">
+                <tr>
+                    <td>NAME:</td>
+                    <td>{{ name }}</td>
+                </tr>
+                <tr>
+                    <td>EMAIL:</td>
+                    <td>{{ email }}</td>
+                </tr>
+                <tr>
+                    <td>BLOOD GROUP:</td>
+                    <td>{{ bloodgroup }}</td>
+                </tr>
+            </table>
+        </div>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            td {
+                border: 1px solid black;
+                padding: 8px;
+            }
+        </style>
+        <script>
+            function generatebill() {
+                var uniqueBillNo = Math.floor(Math.random() * 100000);
+                var str = uniqueBillNo.toString();
+                var today = new Date();
+                var formattedDate = today.toLocaleDateString();
+                document.getElementById('billno').innerHTML = uniqueBillNo;
+                document.getElementById('div').style.backgroundColor = "white";
+                document.getElementById('date').innerHTML = formattedDate;
+                var a = document.getElementById('btn');
+                a.disabled = true;
+            }
+        </script>
+</body>
+</html>

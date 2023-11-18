@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h2>REGISTRATION DETAILS</h2>
+    <a href="{{ url_for('adminlogout') }}" style="color: red;font-size: 25px;">LOGOUT</a>
+    <table style="border: 9px solid black;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr >
+                <td >{{ student[0] }}</td>
+
+                <td >{{ student[1] }}</td>
+
+                <td >{{ student[2] }}</td>
+
+                <td >{{ student[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br><br>
+    <h2>DONOR DETAILS</h2>
+    <table style="border: 7PX solid black;">
+        <thead>
+            <tr>
+                <th>Name</th>
+
+                <th>bloodgroup</th>
+
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donord %}
+            <tr>
+                <td>{{ donor[0] }}</td>
+
+                <td>{{ donor[1] }}</td>
+
+                <td>{{ donor[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <h2>BLOOD AVAILABLE</h2>
+    <table style="border: 7PX solid black;">
+        <thead>
+            <tr>
+                <th>bloodgroup</th>
+
+                <th>UNITS</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for blood in bloods %}
+            <tr>
+                <td>{{ blood[0] }}</td>
+
+                <td>{{ blood[1] }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table><br><br>
+    <h2>BLOOD SUPPLIED DETAILS</h2>
+    <table style="border: 7PX solid black;">
+        <thead>
+            <tr>
+                <th>HOSPITAL NAME</th>
+                <th>HOSPITAL ID</th>
+                <th>BLOOD GROUP</th>
+                <th>UNITS</th>
+                <th>STATUS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for need in needs %}
+            <tr>
+                <td>{{ need[0] }}</td>
+                <td>{{ need[1] }}</td>
+                <td>{{ need[2] }}</td>
+                <td>{{ need[3] }}</td>
+                <td>{{ need[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table><br><br>
+    <h2>ADMIN DETAILS</h2>
+    <table style="border:7px solid black;">
+        <thead>
+            <tr>
+                <th>ADMIN NAME</th>
+                <th>ADMIN ID</th>
+                <th>ADMIN EAMIL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for admin in admins %}
+            <tr>
+                <td>{{ admin[0] }}</td>
+                <td>{{ admin[1] }}</td>
+                <td>{{ admin[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donor</title>
+</head>
+<body >
+    <h1 style="color: aliceblue;font-size: 40px;">THE BEST TYPE OF BLOOD IS THE ONE WHICH IS FREELY GIVEN!</h1>
+    <a href="./home" style="color: white;font-size: 25px;position: absolute;top: 80px;left: 12px;">HOME</a>
+    <img id="bgimage" src="{{ url_for('static', filename='images/heartpic.jpg')}}">
+    <div style="position: absolute;top: 150px;left: 200px;font-size: 30px;border: 10px solid blue;color: white;height: 400px;width: 300px;text-align: center;">
+    <p>{{ text }}</p>
+    <form action="/donor" method="post">
+        <label>NAME:</label><br>
+        <input type="text" name="name"><br>
+        <label>BLOODGROUP:</label><br>
+        <input type="text" name="bloodgroup"><br>
+        <label>EMAIL:</label><br>
+        <input type="email" name="email"><br>
+        <input type="submit" value="PROCEED" style="font-size: 25px;border: 2px solid red;">
+
+    </form>
+    </div>
+    <style>
+        #bgimage {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                }
+    </style>
+</body>
+</html>

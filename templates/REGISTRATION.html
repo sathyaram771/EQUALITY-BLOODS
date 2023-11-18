@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>REGISTRATION DETAILS</h1>
+    <div style="background-color: black;">
+    <a href="./adminhome" style="color: red;font-size: 25px;">ADMIN HOME</a>
+    </div>
+    <br>
+    <table style="border: 9px solid black;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr >
+                <td >{{ student[0] }}</td>
+
+                <td >{{ student[1] }}</td>
+
+                <td >{{ student[2] }}</td>
+
+                <td >{{ student[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div style="position: absolute;bottom: 0px;color: white;background-color: rgb(213, 206, 206);width: 100%;">
+        <h1></h1>
+        <h2>FOLLOW US ON</h2>
+        <a href="https://www.instagram.com/sathya_ram_2005/"><img id="iconimage1" src="{{ url_for('static', filename='images/instagramicon.png') }}"/></a>
+        <a href="https://www.facebook.com/ravichandran.ashwin.5454/about"><img id="iconimage2" src="{{ url_for('static', filename='images/facebookicon.png') }}"/></a>
+        <a href="mailto:sathyaalh3@gmail.com"><img id="iconimage3" src="{{ url_for('static', filename='images/emailicon.png') }}"/></a>
+        <a href="tel:91+9003560430"><img id="iconimage4" src="{{ url_for('static', filename='images/phoneicon.png') }}"/></a>
+        <a href="https://www.linkedin.com/in/sathyaram-p-90962425b"><img id="iconimage5" src="{{ url_for('static', filename='images/linkedinicon.png') }}"/></a>
+    </div>
+    
+</body>
+</html>
